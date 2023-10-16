@@ -1,24 +1,33 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>Ice Climber</title>
   <meta charset="utf-8">
+  <title>Ice Climber</title>
   <link rel="icon" href="Images/ICONO_PESTAÑA-removebg-preview.png">
-  
+  <script src="https://kit.fontawesome.com/9b7672ea92.js" crossorigin="anonymous"></script>
   <link href="CSS/styles.css" rel="stylesheet" type="text/css">
-  <style type="text/css"> 
-    body{ 
-  background-image: url(); 
-  background-position : center; 
-  background-repeat : no-repeat; 
-  background-attachment : fixed; 
-  background-size : contain; 
-} 
-#game {
-    width: 770px;
-    height: 600px;
+  <script>
+    window.addEventListener("scroll", function () {
+  var header = document.querySelector("header");
+  header.classList.toggle("down", window.scrollY > 0);
+});
+
+window.addEventListener("scroll", function () {
+  let navmenu__menu = document.querySelector(".nav-menu__menu");
+  navmenu__menu.classList.toggle("down", window.scrollY > 0);
+});
+
+window.addEventListener("scroll", () => {
+  const toTop = document.querySelector(".to-top");
+  if (window.pageYOffset > 100) {
+    toTop.classList.add("active");
+  } else {
+    toTop.classList.remove("active");
   }
-  </style>
+});
+
+  </script>
+</head>
 <body>
     
 </body>
