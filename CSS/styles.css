@@ -196,3 +196,9 @@ button {
 .footer p {
   font-weight: bold;
 }
+.footer a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #c39;
+}
