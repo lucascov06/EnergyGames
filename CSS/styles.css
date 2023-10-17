@@ -111,3 +111,13 @@ body {
   height: 600px;
 }
 
+.menu {
+  text-align: center;
+  width: 770px;
+  height: 600px;
+  position: relative;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
