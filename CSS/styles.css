@@ -121,3 +121,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.menu img {
+  width: 50%;
+  margin: 80px;
+}
