@@ -160,3 +160,12 @@ button {
     moves 5s ease-in-out infinite;
 }
 
+@keyframes sprite {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: 90px;
+  }
+}
+
