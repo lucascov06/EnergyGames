@@ -98,3 +98,7 @@ body {
   font-size: 38px;
   margin-bottom: 30px;
 }
+.popo_controles ul li {
+  color: #c39;
+  font-weight: bold;
+}
