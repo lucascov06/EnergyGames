@@ -40,3 +40,7 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
+.logo-principal {
+  width: 60%;
+  box-shadow: #000 1px;
+}
