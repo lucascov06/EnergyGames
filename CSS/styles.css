@@ -67,3 +67,8 @@ body {
   font-weight: bolder;
   margin-bottom: 30px;
 }
+.popo_info .popo {
+  margin: 2rem;
+  height: 80px;
+  width: 65px;
+}
