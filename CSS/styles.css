@@ -146,3 +146,17 @@ button {
   position: relative;
 }
 
+#pepe {
+  background-image: url("/Images/pepe_run.png");
+  bottom: 0%;
+  width: calc(105px / 4);
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  animation: sprite 0.5s steps(6) infinite, moves 5s ease-in-out infinite;
+  -webkit-animation: sprite 0.5s steps(3) infinite,
+    moves 5s ease-in-out infinite;
+}
+
