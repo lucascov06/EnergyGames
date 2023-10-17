@@ -93,3 +93,8 @@ body {
   height: 30%;
   margin: 50px;
 }
+.popo_controles ul {
+  list-style: none;
+  font-size: 38px;
+  margin-bottom: 30px;
+}
