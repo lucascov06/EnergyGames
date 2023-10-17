@@ -80,3 +80,7 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.popo_controles p {
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
