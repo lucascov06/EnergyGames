@@ -63,3 +63,7 @@ body {
   flex-direction: column;
   text-align: center;
 }
+.popo_info p {
+  font-weight: bolder;
+  margin-bottom: 30px;
+}
