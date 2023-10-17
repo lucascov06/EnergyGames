@@ -102,3 +102,7 @@ body {
   color: #c39;
   font-weight: bold;
 }
+.popo_controles ul li strong {
+  color: black;
+}
+
