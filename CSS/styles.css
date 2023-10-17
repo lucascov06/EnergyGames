@@ -133,3 +133,11 @@ body {
   width: 20%;
   height: 20%;
 }
+
+button {
+  font-size: 18px;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
