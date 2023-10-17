@@ -188,3 +188,8 @@ button {
     transform: rotateY(0deg);
   }
 }
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+}
