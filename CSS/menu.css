@@ -20,4 +20,10 @@ button {
     padding: 10px 20px;
     margin: 10px;
     cursor: pointer;
+    background-color: antiquewhite;
+    transition: all ease 0.2s;
+  }
+
+  button:hover{
+    background-color: #c39;
   }
