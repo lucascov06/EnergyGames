@@ -3,3 +3,9 @@ body {
     margin: center;
     background:grey;
   }
+
+  footer img {
+    width:50%;
+    height:30%; 
+    margin-top: 200px;
+  }
