@@ -267,6 +267,9 @@ button {
   button{
     background-color: antiquewhite;
     transition: all ease 0.2s;
+    border: 0;
+    width: 160px;
+    text-shadow:0 2px rgba(0, 0, 0,0.6);
   }
 
   button:hover{
