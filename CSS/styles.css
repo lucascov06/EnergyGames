@@ -215,11 +215,3 @@ button {
   }
   }
 
-  button{
-    background-color: antiquewhite;
-    transition: all ease 0.2s;
-  }
-
-  button:hover{
-    background-color: #c39;
-  }
