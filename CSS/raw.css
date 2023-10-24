@@ -7,11 +7,11 @@
   }
   
   #pepe {
-    background-image: url("//Images/pepe_run.png");
+    background-image: url("");
     bottom: 0%;
     width: calc(105px / 4);
     height: 22px;
-    background-color: transparent;
+    background-color: blue;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -25,26 +25,26 @@
       background-position-x: 0px;
     }
     100% {
-      background-position-x: 90px;
+      background-position-x: 100px;
     }
   }
   
   @keyframes moves {
     0% {
-      left: -5%;
+      left: 0%;
     }
     48% {
       transform: rotateY(0deg);
     }
     50% {
-      left: 100%;
+      left: 96.5%;
       transform: rotateY(180deg);
     }
     98% {
       transform: rotateY(180deg);
     }
     100% {
-      left: -5%;
+      left: 0%;
       transform: rotateY(0deg);
     }
   }
