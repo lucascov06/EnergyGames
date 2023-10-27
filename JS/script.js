@@ -25,3 +25,68 @@ window.addEventListener("scroll", function () {
     toTop.classList.remove("active");
   }
 });
+
+const el = document.getElementById('play-button')
+const height = el.clientHeight
+const width = el.clientWidth
+
+el.addEventListener('mousemove',(evt)=> {
+  const {layerX, layerY} = evt
+
+  const yRotation=(
+    (layerX-width/2)/width
+  )*20
+
+  const xRotation = (
+    (layerY - height / 2)/ height
+  )*20
+
+  const string=`
+    perspective(500px)
+    scale(1.1)
+    rotateX(${xRotation}deg)
+    rotateY(${yRotation}deg)`
+  el.style.transform = string
+
+})
+
+el.addEventListener('mouseout',()=>{
+  el.style.transform=`
+    perspective(500px)
+    scale(1)
+    rotateX(0)
+    rotateY(0)`
+})
+
+
+const el1 = document.getElementById('credits-button')
+const height1 = el.clientHeight
+const width1 = el.clientWidth
+
+el1.addEventListener('mousemove',(evt)=> {
+  const {layerX, layerY} = evt
+
+  const yRotation=(
+    (layerX-width1/2)/width1
+  )*20
+
+  const xRotation = (
+    (layerY - height1 / 2)/ height1
+  )*20
+
+  const string=`
+    perspective(500px)
+    scale(1.1)
+    rotateX(${xRotation}deg)
+    rotateY(${yRotation}deg)`
+  el1.style.transform = string
+
+})
+
+el1.addEventListener('mouseout',()=>{
+  el1.style.transform=`
+    perspective(500px)
+    scale(1)
+    rotateX(0)
+    rotateY(0)`
+})
