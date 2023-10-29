@@ -1,5 +1,6 @@
 const playButton = document.getElementById("play-button");
 const creditsButton = document.getElementById("credits-button");
+const accesibilidadButton = document.getElementById("accesibilidad-button");
 
 playButton.addEventListener("click", () => {
   // Redirigir al usuario a la página del juego al hacer clic en "Play"
