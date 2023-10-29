@@ -11,6 +11,10 @@ creditsButton.addEventListener("click", () => {
   // Redirigir al usuario a la página de créditos al hacer clic en "Créditos"
   window.location.href = "creditos.html";
 });
+accesibilidadButton.addEventListener("click", () => {
+  // Redirigir al usuario a la página de créditos al hacer clic en "Créditos"
+  window.location.href = "accesibilidad.html";
+});
 
 window.addEventListener("scroll", function () {
   var header = document.querySelector("header");
