@@ -237,3 +237,17 @@ function resetGame() {
   // Reiniciar el contador de puntos
   score = 0;
 }
+
+function attack() {
+    character.isAttacking = true;
+    for (let i = 0; i < enemies.length; i++) {
+        if (!enemies[i].isDead) {
+            if (Math.abs(character.x - enemies[i].x) <= 50 && character.y + character.height === enemies[i].y) {
+                // Sumar 3 puntos cuando mate a un enemigo
+                score += 3;
+                enemies[i].isDead = true;
+            }
+        }
+    }
+}
+
