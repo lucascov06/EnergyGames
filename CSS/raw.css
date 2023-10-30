@@ -7,4 +7,19 @@ body {
   margin: 0;
 }
 
+#game-canvas {
+  background-color: #050000;
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #666;
+}
+
 
