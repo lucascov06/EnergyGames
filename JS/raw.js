@@ -192,3 +192,16 @@ function jump() {
 function fall() {
     const fallInterval = setInterval(() => {
         let isFalling = true;
+
+        for (let i = 0; i < floorCount; i++) {
+            if (!isFalling) break;
+
+            for (let j = 0; j < floors[i].structureCount; j++) {
+                if (!floors[i].isBroken[j] && character.x + character.width > j * floors[i].structureWidth && character.x < (j + 1) * floors[i].structureWidth) {
+                    if (character.y + character.height === floors[i].y) {
+                        isFalling = false;
+                        character.isJumping = false;
+                    }
+                }
+            }
+        }
