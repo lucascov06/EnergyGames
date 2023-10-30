@@ -120,12 +120,12 @@ el.addEventListener('mousemove',(evt)=> {
     scale(1.1)
     rotateX(${xRotation}deg)
     rotateY(${yRotation}deg)`
-  el2.style.transform = string
+  el.style.transform = string
 
 })
 
-el2.addEventListener('mouseout',()=>{
-  el2.style.transform=`
+el.addEventListener('mouseout',()=>{
+  el.style.transform=`
     perspective(500px)
     scale(1)
     rotateX(0)
