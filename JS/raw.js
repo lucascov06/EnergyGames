@@ -217,3 +217,23 @@ function fall() {
         }
     }, 20);
 }
+
+function resetGame() {
+    character.x = initialCharacter.x;
+    character.y = initialCharacter.y;
+    character.isJumping = initialCharacter.isJumping;
+    character.isAttacking = false;
+    character.jumpHeight = initialCharacter.jumpHeight;
+    for (let i = 0; i < floors.length; i++) {
+        floors[i].isBroken.fill(false);
+    }
+    for (let i = 0; i < enemies.length; i++) {
+        enemies[i].x = Math.random() * (canvas.width - 30);
+        enemies[i].direction = Math.random() < 0.5 ? -1 : 1;
+        enemies[i].speed = 2 + Math.random() * 2;
+        enemies[i].isDead = false;
+    }
+
+  // Reiniciar el contador de puntos
+  score = 0;
+}
