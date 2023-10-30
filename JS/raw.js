@@ -29,3 +29,14 @@ for (let i = 0; i < floorCount; i++) {
         structureWidth: canvas.width / 8,
         isBroken: Array(46).fill(false),
     });
+
+    enemies.push({
+        x: Math.random() * (canvas.width - 30),
+        y: canvas.height - i * 100 + 350 - 30,
+        width: 30,
+        height: 30,
+        direction: Math.random() < 0.5 ? -1 : 1,
+        speed: 2 + Math.random() * 2,
+        isDead: false,
+    });
+}
