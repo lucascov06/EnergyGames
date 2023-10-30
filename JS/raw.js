@@ -140,3 +140,16 @@ function update() {
         }
     }
 }
+
+function isOnFloor(enemy) {
+    for (let i = 0; i < floorCount; i++) {
+        for (let j = 0; j < floors[i].structureCount; j++) {
+            if (!floors[i].isBroken[j] && enemy.x + enemy.width > j * floors[i].structureWidth && enemy.x < (j + 1) * floors[i].structureWidth) {
+                if (enemy.y + enemy.height === floors[i].y) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
+}
