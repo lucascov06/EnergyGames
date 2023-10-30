@@ -18,3 +18,10 @@ const initialCharacter = { ...character };
 const floors = [];
 const enemies = [];
 const floorCount = 4;
+
+for (let i = 0; i < floorCount; i++) {
+    floors.push({
+        x: 0,
+        y: canvas.height - i * 100 + 350,
+        width: canvas.width,
+        height: 20,
