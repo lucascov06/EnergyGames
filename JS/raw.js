@@ -106,3 +106,6 @@ function update() {
     if (keysPressed['ArrowRight'] && character.x + character.width + character.speed <= canvas.width) {
         character.x += character.speed;
     }
+    if (keysPressed['ArrowLeft'] && character.x - character.speed >= 0) {
+        character.x -= character.speed;
+    }
