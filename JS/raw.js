@@ -210,3 +210,10 @@ function fall() {
             if (character.y + character.height < canvas.height) {
                 character.y += 5;
             } else {
+                clearInterval(fallInterval);
+                character.isJumping = false;
+                character.jumpHeight = 100;
+            }
+        }
+    }, 20);
+}
