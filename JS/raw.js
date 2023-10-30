@@ -25,3 +25,7 @@ for (let i = 0; i < floorCount; i++) {
         y: canvas.height - i * 100 + 350,
         width: canvas.width,
         height: 20,
+        structureCount: 46,
+        structureWidth: canvas.width / 8,
+        isBroken: Array(46).fill(false),
+    });
