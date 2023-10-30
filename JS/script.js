@@ -162,3 +162,36 @@ el3.addEventListener('mouseout',()=>{
     rotateY(0)`
 })
 
+
+const el4 = document.getElementById('ayuda-button')
+const height4 = el4.clientHeight
+const width4 = el4.clientWidth
+
+el4.addEventListener('mousemove',(evt)=> {
+  const {layerX, layerY} = evt
+
+  const yRotation=(
+    (layerX-width4/2)/width4
+  )*20
+
+  const xRotation = (
+    (layerY - height4 / 2)/ height4
+  )*20
+
+  const string=`
+    perspective(500px)
+    scale(1.1)
+    rotateX(${xRotation}deg)
+    rotateY(${yRotation}deg)`
+  el4.style.transform = string
+
+})
+
+el4.addEventListener('mouseout',()=>{
+  el4.style.transform=`
+    perspective(500px)
+    scale(1)
+    rotateX(0)
+    rotateY(0)`
+})
+
