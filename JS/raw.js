@@ -62,3 +62,19 @@ function drawCharacter() {
     ctx.fillRect(character.x, character.y, character.width, character.height);
 }
 
+function drawFloors() {
+    for (let i = 0; i < floorCount; i++) {
+        for (let j = 0; j < floors[i].structureCount; j++) {
+            if (!floors[i].isBroken[j]) {
+                ctx.fillStyle = 'green';
+                ctx.fillRect(
+                    j * floors[i].structureWidth,
+                    floors[i].y,
+                    floors[i].structureWidth,
+                    floors[i].height
+                );
+            }
+        }
+    }
+}
+
