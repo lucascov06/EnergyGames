@@ -205,3 +205,8 @@ function fall() {
                 }
             }
         }
+
+        if (isFalling) {
+            if (character.y + character.height < canvas.height) {
+                character.y += 5;
+            } else {
