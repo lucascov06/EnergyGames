@@ -121,3 +121,10 @@ function update() {
             if (enemies[i].x <= 0 || (enemies[i].x + enemies[i].width >= canvas.width) || !isOnFloor(enemies[i])) {
                 enemies[i].direction *= -1;
             }
+
+            if (
+                character.x < enemies[i].x + enemies[i].width &&
+                character.x + character.width > enemies[i].x &&
+                character.y < enemies[i].y + enemies[i].height &&
+                character.y + character.height > enemies[i].y
+            ) {
