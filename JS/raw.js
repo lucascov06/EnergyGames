@@ -40,3 +40,7 @@ for (let i = 0; i < floorCount; i++) {
         isDead: false,
     });
 }
+
+const keysPressed = {};
+
+let score = 0; // Variable para llevar un registro de los puntos
