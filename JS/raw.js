@@ -78,3 +78,11 @@ function drawFloors() {
     }
 }
 
+function drawEnemies() {
+    ctx.fillStyle = 'red';
+    for (let i = 0; i < enemies.length; i++) {
+        if (!enemies[i].isDead) {
+            ctx.fillRect(enemies[i].x, enemies[i].y, enemies[i].width, enemies[i].height);
+        }
+    }
+}
