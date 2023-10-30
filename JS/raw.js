@@ -128,3 +128,15 @@ function update() {
                 character.y < enemies[i].y + enemies[i].height &&
                 character.y + character.height > enemies[i].y
             ) {
+                if (character.isAttacking) {
+                    // Sumar 3 puntos cuando mate a un enemigo
+                    score += 3;
+                    enemies[i].isDead = true;
+                } else {
+                    resetGame();
+                    return;
+                }
+            }
+        }
+    }
+}
