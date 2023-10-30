@@ -251,3 +251,9 @@ function attack() {
     }
 }
 
+function gameLoop() {
+    update();
+    requestAnimationFrame(gameLoop);
+}
+
+gameLoop();
