@@ -153,3 +153,7 @@ function isOnFloor(enemy) {
     }
     return false;
 }
+
+canvas.width = 770;
+canvas.height = 600;
+
