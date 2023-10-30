@@ -188,3 +188,7 @@ function jump() {
         }
     }
 }
+
+function fall() {
+    const fallInterval = setInterval(() => {
+        let isFalling = true;
