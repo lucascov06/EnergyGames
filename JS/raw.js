@@ -96,3 +96,8 @@ function update() {
     drawFloors();
     drawCharacter();
     drawEnemies();
+
+    // Muestra el puntaje en la esquina superior izquierda del canvas
+    ctx.fillStyle = 'black';
+    ctx.font = '20px Arial';
+    document.getElementById("score").textContent = score;
