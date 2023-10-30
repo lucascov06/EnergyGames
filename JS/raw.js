@@ -52,3 +52,13 @@ document.addEventListener('keydown', (event) => {
         attack();
     }
 });
+
+document.addEventListener('keyup', (event) => {
+    keysPressed[event.key] = false;
+});
+
+function drawCharacter() {
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(character.x, character.y, character.width, character.height);
+}
+
