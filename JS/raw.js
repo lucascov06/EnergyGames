@@ -159,3 +159,14 @@ canvas.height = 600;
 
 function jump() {
     let jumpHeight = 0;
+
+    const jumpInterval = setInterval(() => {
+        if (jumpHeight >= character.jumpHeight) {
+            clearInterval(jumpInterval);
+            fall();
+        } else {
+            character.y -= 5;
+            jumpHeight += 5;
+            checkCollision();
+        }
+    }, 20);
