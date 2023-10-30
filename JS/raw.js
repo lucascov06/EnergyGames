@@ -157,3 +157,5 @@ function isOnFloor(enemy) {
 canvas.width = 770;
 canvas.height = 600;
 
+function jump() {
+    let jumpHeight = 0;
