@@ -170,3 +170,21 @@ function jump() {
             checkCollision();
         }
     }, 20);
+
+    function checkCollision() {
+        if (character.isJumping) {
+            for (let i = 0; i < floorCount; i++) {
+                for (let j = 0; j < floors[i].structureCount; j++) {
+                    if (!floors[i].isBroken[j] && character.x + character.width > j * floors[i].structureWidth && character.x < (j + 1) * floors[i].structureWidth) {
+                        if (character.y + character.height === floors[i].y) {
+                            floors[i].isBroken[j] = true;
+                            character.jumpHeight = 150;
+                            // Sumar un punto cuando rompa una estructura
+                            score += 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
