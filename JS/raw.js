@@ -6,6 +6,22 @@ const returnButton = document.getElementById('return-button');
 returnButton.addEventListener('click', () => {
     window.location.href = 'menu.html'; // Redirige al menú HTML cuando se hace clic en el botón "Volver"
 });
+
+const el = document.getElementById('return-button')
+const height = el.clientHeight
+const width = el.clientWidth
+
+el.addEventListener('mousemove',(evt)=> {
+  const {layerX, layerY} = evt
+
+  const yRotation=(
+    (layerX-width/2)/width
+  )*20
+
+  const xRotation = (
+    (layerY - height / 2)/ height
+  )*20
+
 const character = {
     x: 0,
     y: canvas.height + 420,
