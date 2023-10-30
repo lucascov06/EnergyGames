@@ -2,6 +2,10 @@
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
 
+const returnButton = document.getElementById('return-button');
+returnButton.addEventListener('click', () => {
+    window.location.href = 'menu.html'; // Redirige al menú HTML cuando se hace clic en el botón "Volver"
+});
 const character = {
     x: 0,
     y: canvas.height + 420,
