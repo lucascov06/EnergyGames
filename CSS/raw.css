@@ -1,50 +1,41 @@
+body {
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
 
-#game {
-    border: 1px solid black;
-    position: relative;
-    width: 768px;
-    height: 598px;
-  }
-  
-  #pepe {
-    background-image: url("");
-    bottom: 0%;
-    width: calc(105px / 4);
-    height: 22px;
-    background-color: blue;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    animation: sprite 0.5s steps(6) infinite, moves 5s ease-in-out infinite;
-    -webkit-animation: sprite 0.5s steps(3) infinite,
-      moves 5s ease-in-out infinite;
-  }
-  
-  @keyframes sprite {
-    0% {
-      background-position-x: 0px;
-    }
-    100% {
-      background-position-x: 100px;
-    }
-  }
-  
-  @keyframes moves {
-    0% {
-      left: 0%;
-    }
-    48% {
-      transform: rotateY(0deg);
-    }
-    50% {
-      left: 96.5%;
-      transform: rotateY(180deg);
-    }
-    98% {
-      transform: rotateY(180deg);
-    }
-    100% {
-      left: 0%;
-      transform: rotateY(0deg);
-    }
-  }
+#game-canvas {
+  background-color: #050000;
+  border: 2px solid #333;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+}
+
+canvas {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid #666;
+}
+
+#score-container {
+  text-align: left; /* Cambia a alineación izquierda */
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: #f0f0f0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+#score {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: red;
+}
+
+
