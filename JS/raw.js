@@ -14,3 +14,7 @@ const character = {
 };
 
 const initialCharacter = { ...character };
+
+const floors = [];
+const enemies = [];
+const floorCount = 4;
