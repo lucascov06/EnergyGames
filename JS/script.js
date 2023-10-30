@@ -1,7 +1,7 @@
 const playButton = document.getElementById("play-button");
 const creditsButton = document.getElementById("credits-button");
 const accesibilidadButton = document.getElementById("accesibilidad-button");
-
+const ayudaButton = document.getElementById("ayuda-button");
 playButton.addEventListener("click", () => {
   // Redirigir al usuario a la página del juego al hacer clic en "Play"
   window.location.href = "raw.html";
@@ -14,6 +14,10 @@ creditsButton.addEventListener("click", () => {
 accesibilidadButton.addEventListener("click", () => {
   // Redirigir al usuario a la página de créditos al hacer clic en "Créditos"
   window.location.href = "accesibilidad.html";
+});
+ayudaButton.addEventListener("click", () => {
+  // Redirigir al usuario a la página de créditos al hacer clic en "Créditos"
+  window.location.href = "ayuda.html";
 });
 
 window.addEventListener("scroll", function () {
@@ -116,12 +120,12 @@ el.addEventListener('mousemove',(evt)=> {
     scale(1.1)
     rotateX(${xRotation}deg)
     rotateY(${yRotation}deg)`
-  el.style.transform = string
+  el2.style.transform = string
 
 })
 
-el.addEventListener('mouseout',()=>{
-  el.style.transform=`
+el2.addEventListener('mouseout',()=>{
+  el2.style.transform=`
     perspective(500px)
     scale(1)
     rotateX(0)
