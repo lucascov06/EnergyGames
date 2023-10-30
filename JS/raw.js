@@ -44,3 +44,11 @@ for (let i = 0; i < floorCount; i++) {
 const keysPressed = {};
 
 let score = 0; // Variable para llevar un registro de los puntos
+
+document.addEventListener('keydown', (event) => {
+    keysPressed[event.key] = true;
+    if (event.key === 'ArrowDown' && !character.isAttacking) {
+        character.isAttacking = true;
+        attack();
+    }
+});
