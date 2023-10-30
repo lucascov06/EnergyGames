@@ -109,3 +109,8 @@ function update() {
     if (keysPressed['ArrowLeft'] && character.x - character.speed >= 0) {
         character.x -= character.speed;
     }
+    if (keysPressed['ArrowUp'] && !character.isJumping) {
+        character.isJumping = true;
+        jump();
+    }
+
