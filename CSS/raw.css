@@ -39,4 +39,21 @@ canvas {
   color: red;
 }
 
+#return-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  font-size: 20px;
+  background-color: white;
+  color: grey;
+  border: none;
+  cursor: pointer;
+  border-radius: 12px;
+  text-shadow:0 2px rgba(0, 0, 0,0.6);
+  transition: box-shadow .1s, transformation;
+  font-weight: bold;
+  transition: all ease 0.2s;
+}
+
 
