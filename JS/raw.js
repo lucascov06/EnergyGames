@@ -114,3 +114,10 @@ function update() {
         jump();
     }
 
+    for (let i = 0; i < enemies.length; i++) {
+        if (!enemies[i].isDead) {
+            enemies[i].x += enemies[i].speed * enemies[i].direction;
+
+            if (enemies[i].x <= 0 || (enemies[i].x + enemies[i].width >= canvas.width) || !isOnFloor(enemies[i])) {
+                enemies[i].direction *= -1;
+            }
