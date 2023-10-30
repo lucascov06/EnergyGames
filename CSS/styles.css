@@ -227,10 +227,12 @@ button {
   pointer-events: auto;
   opacity: 1;
 }
-#play-button{
+#play-button
+,#credits-button{
   background: white;
   cursor: pointer;
   border: none;
+  top: -45px;
   padding: 16px 32px;
   color: grey;
   font-size: 24px;
@@ -246,7 +248,8 @@ button {
 }
 #play-button:hover
 ,#accesibilidad-button:hover
-,#credits-button:hover{
+,#credits-button:hover
+,#ayuda-button:hover{
   background-color: #c39;
   color: blue;
   background-color: red;
@@ -254,7 +257,8 @@ button {
 }
 #play-button:hover:before
 ,#accesibilidad-button:hover::before,
-#credits-button:hover::before{
+#credits-button:hover::before
+,#ayuda-button:hover::before{
   content: '';
   position: absolute;
   top: 0;
@@ -279,10 +283,12 @@ button {
   background-position: 0 0;
   }
 }
-#accesibilidad-button{
+#accesibilidad-button
+,#ayuda-button{
   background: white;
   cursor: pointer;
   border: none;
+  top: -45px;
   color: grey;
   font-size: 21px;
   font-weight: bold;
@@ -294,21 +300,5 @@ button {
   width: 160px;
   text-shadow:0 2px rgba(0, 0, 0,0.6);
   transition: box-shadow .1s, transformation;
-}
-#credits-button{
-  background: white;
-  cursor: pointer;
-  border: none;
-  padding: 16px 32px;
-  color: grey;
-  font-size: 24px;
-  font-weight: bold;
-  position: relative;
-  border-radius: 12px;
-  background-color: antiquewhite;
-  transition: all ease 0.2s;
-  border: 0;
-  width: 160px;
-  text-shadow:0 2px rgba(0, 0, 0,0.6);
-  transition: box-shadow .1s, transformation;
+  padding: 18px 30px;
 }
