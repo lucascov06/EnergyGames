@@ -101,3 +101,8 @@ function update() {
     ctx.fillStyle = 'black';
     ctx.font = '20px Arial';
     document.getElementById("score").textContent = score;
+
+
+    if (keysPressed['ArrowRight'] && character.x + character.width + character.speed <= canvas.width) {
+        character.x += character.speed;
+    }
