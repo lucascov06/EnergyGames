@@ -1,13 +1,13 @@
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(122, 108, 108);
 }
 h1{
     font-size: 40px;
-    margin-top: 100px;
+    margin-top: 70px;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: red;
-    text-shadow: 2px 2px 6px rgb(30, 0, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /*color: red;*/
+    /*text-shadow: 2px 2px 6px rgb(30, 0, 255);*/
 }
 #volver{
     position: absolute;
@@ -33,20 +33,47 @@ h1{
 }
 
 h2{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: rgb(255, 0, 0);
-    text-shadow: 2px 2px 6px rgb(30, 0, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+    /*color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 6px rgb(68, 67, 70);*/
 }
 
 .flechas{
-    text-align: center;
     width: 200px;
     height: 150px;
     margin-left: 150px;
 }
-.controles{
-    text-align: center;
+
+
+
+li{
+    color: white;
     list-style: none;
-    color:white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: Courier, "Courier New", monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0,0.6);
+    margin-left: 93px;
+}
+.popo_info{
+    color: white;
+    list-style: none;
+    font-family: Courier, "Courier New", monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0,0.6);
+    margin-left: 30px;
+}
+
+.popo_controles{
+    color: white;
+    list-style: none;
+    font-family: Courier, "Courier New", monospace;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0,0.6);
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+}
+.popo{
+    margin-left: 150px;
 }
