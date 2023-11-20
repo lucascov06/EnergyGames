@@ -1,7 +1,6 @@
 //movimientos
 const canvas = document.getElementById('game-canvas');
-const ctx = canvas.getContext('2d');
-
+const ctx = canvas.getContext('2d'); //define las dimensiones
 const returnButton = document.getElementById('return-button');
 returnButton.addEventListener('click', () => {
     window.location.href = 'menu.html'; // Redirige al menú HTML cuando se hace clic en el botón "Volver"
@@ -38,7 +37,8 @@ el.addEventListener('mouseout',()=>{
     rotateX(0)
     rotateY(0)`
 })
-const character = {
+
+const character = {//posiciones inicales del personaje
     x: 0,
     y: canvas.height + 420,
     width: 30,
@@ -54,6 +54,7 @@ const initialCharacter = { ...character };
 const floors = [];
 const enemies = [];
 const floorCount = 4;
+
 
 for (let i = 0; i < floorCount; i++) {
     floors.push({
@@ -83,7 +84,7 @@ let score = 0; // Variable para llevar un registro de los puntos
 
 document.addEventListener('keydown', (event) => {
     keysPressed[event.key] = true;
-    if (event.key === 'ArrowDown' && !character.isAttacking) {
+    if (event.key === 's' && !character.isAttacking) {
         character.isAttacking = true;
         attack();
     }
@@ -137,15 +138,15 @@ function update() {
     ctx.fillStyle = 'black';
     ctx.font = '20px Arial';
     document.getElementById("score").textContent = score;
+    
 
-
-    if (keysPressed['ArrowRight'] && character.x + character.width + character.speed <= canvas.width) {
+    if (keysPressed['d'] && character.x + character.width + character.speed <= canvas.width) {
         character.x += character.speed;
     }
-    if (keysPressed['ArrowLeft'] && character.x - character.speed >= 0) {
+    if (keysPressed['a'] && character.x - character.speed >= 0) {
         character.x -= character.speed;
     }
-    if (keysPressed['ArrowUp'] && !character.isJumping) {
+    if (keysPressed['w'] && !character.isJumping) {
         character.isJumping = true;
         jump();
     }
@@ -207,7 +208,7 @@ function jump() {
         }
     }, 20);
 
-    function checkCollision() {
+    function checkCollision() { //chequea si el personaje rompio la estructura.
         if (character.isJumping) {
             for (let i = 0; i < floorCount; i++) {
                 for (let j = 0; j < floors[i].structureCount; j++) {
