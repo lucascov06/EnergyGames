@@ -8,44 +8,40 @@ function cargar(){
 })
 //movimientos
 const canvas = document.getElementById('game-canvas');
-const ctx = canvas.getContext('2d'); //define las dimensiones
+const ctx = canvas.getContext('2d');
 const returnButton = document.getElementById('return-button');
+
 returnButton.addEventListener('click', () => {
-    window.location.href = 'menu.html'; // Redirige al menú HTML cuando se hace clic en el botón "Volver"
+    window.location.href = 'menu.html';
 });
-const el = document.getElementById('return-button')
-const height = el.clientHeight
-const width = el.clientWidth
 
-el.addEventListener('mousemove',(evt)=> {
-  const {layerX, layerY} = evt
+const el = document.getElementById('return-button');
+const height = el.clientHeight;
+const width = el.clientWidth;
 
-  const yRotation=(
-    (layerX-width/2)/width
-  )*20
+el.addEventListener('mousemove', (evt) => {
+    const { layerX, layerY } = evt;
 
-  const xRotation = (
-    (layerY - height / 2)/ height
-  )*20
+    const yRotation = ((layerX - width / 2) / width) * 20;
+    const xRotation = ((layerY - height / 2) / height) * 20;
 
-  const string=`
+    const string = `
     perspective(500px)
     scale(1.1)
     rotateX(${xRotation}deg)
-    rotateY(${yRotation}deg)`
-  el.style.transform = string
+    rotateY(${yRotation}deg)`;
+    el.style.transform = string;
+});
 
-})
-
-el.addEventListener('mouseout',()=>{
-  el.style.transform=`
+el.addEventListener('mouseout', () => {
+    el.style.transform = `
     perspective(500px)
     scale(1)
     rotateX(0)
-    rotateY(0)`
-})
+    rotateY(0)`;
+});
 
-const character = {//posiciones inicales del personaje
+const character = {
     x: 0,
     y: canvas.height + 420,
     width: 30,
@@ -60,8 +56,10 @@ const initialCharacter = { ...character };
 
 const floors = [];
 const enemies = [];
+const balls = [];
 const floorCount = 4;
 
+let enemySpeed = 2; // Velocidad inicial de los enemigos
 
 for (let i = 0; i < floorCount; i++) {
     floors.push({
@@ -80,14 +78,26 @@ for (let i = 0; i < floorCount; i++) {
         width: 30,
         height: 30,
         direction: Math.random() < 0.5 ? -1 : 1,
-        speed: 2 + Math.random() * 2,
+        speed: enemySpeed + Math.random() * 2,
         isDead: false,
     });
+
+    // Crear pelotitas en línea recta en cada piso
+    const ballSpacing = floors[i].structureWidth / 2; // Espacio entre las pelotitas
+    for (let k = 0; k < floors[i].structureCount; k++) {
+        balls.push({
+            x: k * floors[i].structureWidth + ballSpacing,
+            y: floors[i].y - Math.random() * 1,
+            radius: 4,
+            color: 'orange',
+            isEaten: false,
+        });
+    }
 }
 
 const keysPressed = {};
 
-let score = 0; // Variable para llevar un registro de los puntos
+let score = 0;
 
 document.addEventListener('keydown', (event) => {
     keysPressed[event.key] = true;
@@ -119,6 +129,17 @@ function drawFloors() {
                 );
             }
         }
+
+        // Dibujar pelotitas en cada piso
+        for (let k = 0; k < balls.length; k++) {
+            if (!balls[k].isEaten) {
+                ctx.fillStyle = balls[k].color;
+                ctx.beginPath();
+                ctx.arc(balls[k].x, balls[k].y, balls[k].radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
     }
 }
 
@@ -144,8 +165,7 @@ function update() {
     // Muestra el puntaje en la esquina superior izquierda del canvas
     ctx.fillStyle = 'black';
     ctx.font = '20px Arial';
-    document.getElementById("score").textContent = score;
-    
+    document.getElementById('score').textContent = score;
 
     if (keysPressed['d'] && character.x + character.width + character.speed <= canvas.width) {
         character.x += character.speed;
@@ -156,6 +176,30 @@ function update() {
     if (keysPressed['w'] && !character.isJumping) {
         character.isJumping = true;
         jump();
+    }
+
+    // Colisión entre el personaje y las pelotitas
+    for (let i = 0; i < balls.length; i++) {
+        if (!balls[i].isEaten) {
+            if (
+                character.x < balls[i].x + balls[i].radius &&
+                character.x + character.width > balls[i].x - balls[i].radius &&
+                character.y < balls[i].y + balls[i].radius &&
+                character.y + character.height > balls[i].y - balls[i].radius
+            ) {
+                // Aumentar el puntaje cuando el personaje come una pelotita
+                score += 1;
+                balls[i].isEaten = true;
+
+                // Aumentar la velocidad de los enemigos cada vez que se come una pelotita
+                enemySpeed += 0.2;
+                for (let j = 0; j < enemies.length; j++) {
+                    if (!enemies[j].isDead) {
+                        enemies[j].speed = enemySpeed + Math.random() * 2;
+                    }
+                }
+            }
+        }
     }
 
     for (let i = 0; i < enemies.length; i++) {
@@ -215,7 +259,7 @@ function jump() {
         }
     }, 20);
 
-    function checkCollision() { //chequea si el personaje rompio la estructura.
+    function checkCollision() {
         if (character.isJumping) {
             for (let i = 0; i < floorCount; i++) {
                 for (let j = 0; j < floors[i].structureCount; j++) {
@@ -273,7 +317,8 @@ function resetGame() {
     }
     for (let i = 0; i < enemies.length; i++) {
         enemies[i].x = Math.random() * (canvas.width - 30);
-        enemies[i].direction = Math.random() < 0.5 ? -1 : 1;
+        enemies[i].direction = Math.random() < 0.5 ? -1 : 1
+
         enemies[i].speed = 2 + Math.random() * 2;
         enemies[i].isDead = false;
     }
