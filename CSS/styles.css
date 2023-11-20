@@ -12,6 +12,7 @@ html {
   scroll-behavior: smooth;
   font-size: 10px;
   -webkit-font-smoothing: antialiased;
+  background-image: url(../Images/fondo_pagina.avif);
 }
 body {
   font-family: Courier, "Courier New", monospace;
