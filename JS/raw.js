@@ -13,7 +13,6 @@ const returnButton = document.getElementById('return-button');
 returnButton.addEventListener('click', () => {
     window.location.href = 'menu.html'; // Redirige al menú HTML cuando se hace clic en el botón "Volver"
 });
-
 const el = document.getElementById('return-button')
 const height = el.clientHeight
 const width = el.clientWidth
@@ -301,5 +300,5 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-gameLoop();gameLoop();
+gameLoop();
 }
