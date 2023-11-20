@@ -1,3 +1,11 @@
+//sonido
+function cargar(){
+    const sonidos= document.getElementById('sonido');
+    document.addEventListener('keydown', function(evento){
+    if (evento.keyCode == 32){
+        sonidos.innerHTML += '<audio src="sonidos/src_Sounds_melodias_Menu1.mp3" autoplay></audio>';
+}
+})
 //movimientos
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d'); //define las dimensiones
@@ -293,4 +301,5 @@ function gameLoop() {
     requestAnimationFrame(gameLoop);
 }
 
-gameLoop();
+gameLoop();gameLoop();
+}
