@@ -21,6 +21,7 @@ canvas {
   display: block;
   margin: 0 auto;
   border: 2px solid #666;
+  background-image: url(../Images/fondojuego2.jpeg);
 }
 
 #score-container {
