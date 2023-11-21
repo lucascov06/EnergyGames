@@ -162,7 +162,6 @@ function update() {
     drawCharacter();
     drawEnemies();
 
-    // Muestra el puntaje en la esquina superior izquierda del canvas
     ctx.fillStyle = 'black';
     ctx.font = '20px Arial';
     document.getElementById('score').textContent = score;
@@ -217,7 +216,6 @@ function update() {
                 character.y + character.height > enemies[i].y
             ) {
                 if (character.isAttacking) {
-                    // Sumar 3 puntos cuando mate a un enemigo
                     score += 3;
                     enemies[i].isDead = true;
                 } else {
@@ -267,7 +265,6 @@ function jump() {
                         if (character.y + character.height === floors[i].y) {
                             floors[i].isBroken[j] = true;
                             character.jumpHeight = 150;
-                            // Sumar un punto cuando rompa una estructura
                             score += 1;
                         }
                     }
